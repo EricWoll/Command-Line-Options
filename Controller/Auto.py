@@ -6,10 +6,10 @@ class Auto(Base):
         super().__init__()
     
     def addOption(self, option: str, funcLink) -> None:
-        self.optionsList.append( [option, funcLink] )
+        self._optionsList.append( [option, funcLink] )
     
     def removeOption(self, option: str) -> None:
-        for index, item in enumerate(self.optionsList):
+        for index, item in enumerate(self._optionsList):
             if item[0] == option:
-                del self.optionsList[index]
-        self.optionListLength -= 1
+                del self._optionsList[index]
+        self._optionListLength -= 1
