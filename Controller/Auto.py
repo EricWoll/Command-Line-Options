@@ -7,6 +7,7 @@ class Auto(Base):
     
     def addOption(self, option: str, funcLink) -> None:
         self._optionsList.append( [option, funcLink] )
+        self._optionListLength = len(self._optionsList)
     
     def removeOption(self, option: str) -> None:
         for index, item in enumerate(self._optionsList):

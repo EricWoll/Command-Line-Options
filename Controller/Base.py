@@ -17,6 +17,7 @@ class Base:
     
     def clearOptions(self):
         self._optionsList.clear()
+        self._optionListLength = len(self._optionsList)
 
     def printOptions(self):
         for index, item in enumerate(self._optionsList):
@@ -32,7 +33,7 @@ class Base:
             print("Enter one of the options: \n")
             self.printOptions()
             print(f"{len(self._optionsList)+1}. Quit")
-            self.userInput.set_value("\n> ")
+            self.userInput.input("\n> ")
 
             if self.userInput.get_value() == str(self._optionListLength + 1):
                 os.system("cls")

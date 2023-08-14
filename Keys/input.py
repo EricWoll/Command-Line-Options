@@ -13,7 +13,7 @@ class KeyboardInput:
         for i in range(150):
             keyboard.block_key(i)
 
-    def set_value(self, prompt):
+    def input(self, prompt):
         self._value = input(prompt)
 
     def get_value(self):
