@@ -1,4 +1,4 @@
-import Controller
+import Controller.Auto
 
 class Test_AutoController:
 

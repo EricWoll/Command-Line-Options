@@ -1,6 +1,6 @@
 import os
 import time
-from Keys.input import KeyboardInput
+from Keys.Input import KeyboardInput
 
 class Base:
 
