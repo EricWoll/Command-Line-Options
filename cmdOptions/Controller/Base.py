@@ -1,6 +1,6 @@
 import os
 import time
-from Keys.Input import KeyboardInput
+from cmdOptions.Keys.Input import KeyboardInput
 
 class Base:
 
