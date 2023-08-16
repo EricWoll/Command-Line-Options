@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cmdOptions"
-version = "0.0.31"
+version = "0.0.32"
 authors = [
   { name="SteelHeart696", email="steelheart696@gmail.com" },
 ]
@@ -17,10 +17,6 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-]
-dependencies = [
-    "pynput",
-    "keyboard",
 ]
 
 [project.urls]

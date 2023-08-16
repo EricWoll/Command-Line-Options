@@ -1,13 +1,22 @@
 import os
 import time
-from cmdOptions.Keys.Input import KeyboardInput
 
-class Base:
+class Controller:
 
     def __init__(self):
         self._optionsList = list()
         self._optionListLength = 0
-        self.userInput = KeyboardInput()
+        self.userInput = ''
+
+    def addOption(self, option: str, funcLink) -> None:
+        self._optionsList.append( [option, funcLink] )
+        self._optionListLength = len(self._optionsList)
+    
+    def removeOption(self, option: str) -> None:
+        for index, item in enumerate(self._optionsList):
+            if item[0] == option:
+                del self._optionsList[index]
+        self._optionListLength -= 1
 
     def get_optionListLength(self):
        return self._optionListLength
@@ -28,29 +37,25 @@ class Base:
 
     def runLoop(self):
         self._optionListLength = len(self._optionsList)
-        while not self.userInput.compare(str(self._optionListLength +1)):
+        while self.userInput != str(self._optionListLength +1):
 
             print("Enter one of the options: \n")
             self.printOptions()
             print(f"{len(self._optionsList)+1}. Quit")
-            self.userInput.input("\n> ")
+            self.userInput = input("\n> ")
 
-            if self.userInput.get_value() == str(self._optionListLength + 1):
+            if self.userInput == str(self._optionListLength + 1):
                 os.system("cls")
                 break
             
-            elif self.userInput.get_value().isnumeric() and 0 < int(self.userInput.get_value()) <= self._optionListLength:
+            elif self.userInput.isnumeric() and 0 < int(self.userInput) <= self._optionListLength:
                 os.system("cls")
-                self.runFunc(int(self.userInput.get_value()))
+                self.runFunc(int(self.userInput))
 
             else:
                 os.system("cls")
-                
-                self.userInput.disable()
 
-                print(f"\nOption \"{self.userInput.get_value()}\" does not exist, please try again.")
+                print(f"\nOption \"{self.userInput}\" does not exist, please try again.")
                 time.sleep(3)
-
-                self.userInput.enable()
 
                 os.system("cls")

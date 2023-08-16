@@ -1,2 +1,1 @@
-from cmdOptions.Controller import Auto
-from cmdOptions.Keys import Input
+from cmdOptions import Controller
