@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cmdOptions"
-version = "0.0.1"
+version = "0.0.3"
 authors = [
   { name="SteelHeart696", email="steelheart696@gmail.com" },
 ]
