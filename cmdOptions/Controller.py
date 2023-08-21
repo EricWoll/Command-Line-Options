@@ -1,5 +1,5 @@
-import os
 import time
+from cmdOptions.Tools import Tools
 
 class Controller:
 
@@ -7,6 +7,7 @@ class Controller:
         self._optionsList = list()
         self._optionListLength = 0
         self.userInput = ''
+        self._system_type = Tools.get_system_type()
 
     def addOption(self, option: str, funcLink) -> None:
         '''
@@ -91,17 +92,17 @@ class Controller:
             self.userInput = input("\n> ")
 
             if self.userInput == str(self._optionListLength + 1):
-                os.system("cls")
+                Tools.clearScreen(self._system_type)
                 break
             
             elif self.userInput.isnumeric() and 0 < int(self.userInput) <= self._optionListLength:
-                os.system("cls")
+                Tools.clearScreen(self._system_type)
                 self._runFunc(int(self.userInput))
 
             else:
-                os.system("cls")
+                Tools.clearScreen(self._system_type)
 
                 print(f"\nOption \"{self.userInput}\" does not exist, please try again.")
                 time.sleep(3)
 
-                os.system("cls")
+                Tools.clearScreen(self._system_type)

@@ -7,7 +7,7 @@ class Tools:
     '''
 
     # Holds os platform command-line clear commands
-    ClearCommand = {
+    _ClearCommand = {
         "Windows": "cls",
         "Linux": "clear",
         "Darwin": "clear" # This is MacOS
@@ -18,8 +18,14 @@ class Tools:
         return platform()
     
     def clearScreen(os_name: str) -> None:
-        ''' Clears command-line based on os_name. '''
-        command(Tools.ClearCommand[os_name])
+        '''
+        Clears command-line based on os_name.
+        NOTE: use "get_system_type" tools function to get os name.
+
+        Args:
+        - os_name (str): name of operating system
+        '''
+        command(Tools._ClearCommand[os_name])
 
     def waitForEnter() -> None:
         ''' Pauses input until enter key is pressed. '''

@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cmdOptions"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="SteelHeart696", email="steelheart696@gmail.com" },
 ]
 description = "A package making it easier to create small command-line option pickers"
 readme = "README.md"
-keywords = ["command-line", "simple"]
+keywords = ["command-line", "command line", "simple", "options"]
 requires-python = ">=3.7"
 license = {text = "MIT"}
 classifiers = [
