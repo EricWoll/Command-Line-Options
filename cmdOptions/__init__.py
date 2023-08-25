@@ -1,2 +1,2 @@
-from cmdOptions import Controller
+from cmdOptions import OptionsHandler
 from cmdOptions import Tools

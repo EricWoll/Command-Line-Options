@@ -1,13 +1,19 @@
 import time
 from cmdOptions.Tools import Tools
 
-class Controller:
+class OptionsHandler:
+    '''
+    A handler for managing different options in one place.
 
-    def __init__(self):
+    Args:
+    - os_name (str): the name of the operating system. (use 'get_system_type()' from Tools)
+    '''
+
+    def __init__(self, os_name: str) -> None:
         self._optionsList = list()
         self._optionListLength = 0
         self.userInput = ''
-        self._system_type = Tools.get_system_type()
+        self._system_type = os_name
 
     def addOption(self, option: str, funcLink) -> None:
         '''
