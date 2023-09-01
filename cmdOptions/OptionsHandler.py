@@ -1,5 +1,5 @@
 import time
-from cmdOptions.Tools import Tools
+from cmdOptions import Tools
 
 class OptionsHandler:
     '''
