@@ -1,11 +1,12 @@
-import cmdOptions.Controller as c
+import cmdOptions.OptionsHandler as c
+from cmdOptions.Tools import Tools
 
 class Test_Controller:
     '''
     This is the class that holds all of the testing for the Controller allowing for the tesing of a single instance of the Controller class.
     '''
 
-    controller = c.Controller()
+    controller = c.OptionsHandler(os_name = Tools.get_system_type())
 
     def option1_test():
         ''' This is a throw away function for testing '''

@@ -27,6 +27,11 @@ class Tools:
         '''
         command(Tools._ClearCommand[os_name])
 
-    def waitForEnter() -> None:
-        ''' Pauses input until enter key is pressed. '''
-        input("\nPress enter to continue.....")
+    def waitForEnter(message: str = 'Press Enter to Continue...') -> None:
+        '''
+        Pauses input until enter key is pressed.
+        
+        Args:
+        - message (str): message that will be displayed when waiting for 'Enter" keyto be pressed
+        '''
+        input(message)
